@@ -83,6 +83,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.uploader = self.request.user
         return super().form_valid(form)
+
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     """
     Lets user update a post

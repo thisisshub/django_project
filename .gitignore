@@ -3,6 +3,6 @@
 *.pyc
 __pycache__/
 local_settings.py
-
+dp/
 .env
 db.sqlite3
