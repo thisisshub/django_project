@@ -1,6 +1,11 @@
 body {
   font-family: 'Inconsolata';font-size: 22px;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+  justify-content: center;
   background: white;
+
 }
 a{
   color: black;
@@ -45,6 +50,7 @@ nav ul {
   z-index: 2;
   text-transform: uppercase;
   text-align: center;
+  background: white;
 }
 
 .navbar-elements{
