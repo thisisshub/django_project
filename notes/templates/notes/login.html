@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% load static %}
 {% load crispy_forms_tags %}
 {% block content %}
     {% if title %}
@@ -10,14 +10,27 @@
     <html>
     <head>
         <title>Google Registration</title>
+        <link rel="stylesheet" type="text/css" href="{% static '/notes/login.css' %}">
     </head>
     <body>
     {% if user.is_authenticated %}
     <p>👋, {{ user.username }} !</p>
     
     {% else %}
-    <a href="{% provider_login_url 'google' %}">Google</a>
-    <a href="{% provider_login_url 'github' %}">Github</a>
+    <div class="container">
+
+        <h1 class="title" style="font-family: Inconsolata;"> Login With: </h1>
+        <div class="avatar">
+            <!-- <a href="{% provider_login_url 'google' %}"><img alt="" aria-hidden src="https://cdn.svgporn.com/logos/google-icon.svg" class="background" /></a> -->
+            <a href="{% provider_login_url 'google' %}"><img alt="Avatar" src="https://cdn.svgporn.com/logos/google-icon.svg" width="100" height="100" /><a href="{% provider_login_url 'google' %}"></a>
+        </div>
+    
+        <div class="avatar">
+            <!-- <a href="{% provider_login_url 'github' %}"><img alt="" aria-hidden src="https://cdn.svgporn.com/logos/github-octocat.svg" class="background" /></a> -->
+            <a href="{% provider_login_url 'github' %}"><img alt="Avatar" src="https://cdn.svgporn.com/logos/github-octocat.svg" width="100" height="100" /></a>
+        </div>
+
+    </div>
     {% endif %}
 
     </body>
