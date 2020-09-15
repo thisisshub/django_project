@@ -8,7 +8,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'e4$aj7hp-=zrgwcpvzf4v+q7sp=%8ag=h0v8!4ixp&g$d*s&ge'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -26,15 +26,23 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    # google and github social login
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
     'allauth.socialaccount.providers.github',
+    # apps
     'notes.apps.NotesConfig',
     'users.apps.UsersConfig',
+    # social login 
     'social_django',
+    # user creation registration form
     'crispy_forms',
+    # threaded comments
+    'django_comments',
+    'mptt',
+    'comments',
 ]
 
 MIDDLEWARE = [
@@ -132,6 +140,8 @@ CRISPY_TEMPLATE_PACK ='bootstrap4'
 
 LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = 'login'
+
+COMMENTS_APP = 'comments'
 
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
