@@ -1,3 +1,4 @@
+{% extends 'base.html' %}
 {% load static %}
 {% load crispy_forms_tags %}
 {% block content %}
@@ -13,26 +14,25 @@
         <link rel="stylesheet" type="text/css" href="{% static '/notes/login.css' %}">
     </head>
     <body>
-    {% if user.is_authenticated %}
-    <p>👋, {{ user.username }} !</p>
-    
-    {% else %}
-    <div class="container">
-
-        <h1 class="title" style="font-family: Inconsolata;"> Login With: </h1>
-        <div class="avatar">
-            <!-- <a href="{% provider_login_url 'google' %}"><img alt="" aria-hidden src="https://cdn.svgporn.com/logos/google-icon.svg" class="background" /></a> -->
-            <a href="{% provider_login_url 'google' %}"><img alt="Avatar" src="https://cdn.svgporn.com/logos/google-icon.svg" width="100" height="100" /><a href="{% provider_login_url 'google' %}"></a>
-        </div>
-    
-        <div class="avatar">
-            <!-- <a href="{% provider_login_url 'github' %}"><img alt="" aria-hidden src="https://cdn.svgporn.com/logos/github-octocat.svg" class="background" /></a> -->
-            <a href="{% provider_login_url 'github' %}"><img alt="Avatar" src="https://cdn.svgporn.com/logos/github-octocat.svg" width="100" height="100" /></a>
-        </div>
-
+    <div class="card border-dark mb-3 text-center p-3 justify-content-center" style="max-width: 25rem;">
+    <div class="card-header">👋 Hi there!</div>
+    <div class="card-body text-dark">
+        <h5 class="card-title text-center">Login With</h5>
+        <button class="btn btn-block social-login google">
+					<span class="social-icons">
+						<i class="fab fa-google fa-lg">
+						</i>
+					</span>
+					<span class="align-middle"><a href="{% provider_login_url 'google' %}"> Google</a></span>
+				</button>
+				<button class="btn btn-block social-login github">
+					<span class="social-icons">
+						<i class="fab fa-github fa-lg">	
+                        </i> 
+					</span><a href="{% provider_login_url 'github' %}"> Github</a></span>
+				</button>
     </div>
-    {% endif %}
-
     </body>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     </html>
 {% endblock content %}
