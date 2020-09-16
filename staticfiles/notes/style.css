@@ -1,20 +1,18 @@
 body {
   font-family: 'Inconsolata';font-size: 22px;
-	height: 100vh;
-	display: flex;
-	align-items: center;
   justify-content: center;
   background: white;
-
 }
+
 a{
   color: black;
 }
+
 .content-section {
   background: white;
   padding: 10px 20px;
   border: 1px solid  black;
-  border-radius: 1px;
+  border-radius: 20px;
   margin-bottom: 20px;
   margin-top: 30px;
 }
@@ -27,7 +25,7 @@ nav {
   position: fixed;
   width: 100%;
   top: 0%;
-  background: white;
+  background: lightblue;
   -webkit-transition: all 650ms cubic-bezier(0.22, 1, 0.25, 1);
   transition: all 650ms cubic-bezier(0.22, 1, 0.25, 1);
 }
@@ -111,4 +109,9 @@ ul {
 
 .site-header .navbar-nav .nav-link.active {
   font-weight: 500;
+}
+
+.mb-4, .my-4 {
+  margin-bottom: 1.5rem !important;
+  margin-left: 20px;
 }

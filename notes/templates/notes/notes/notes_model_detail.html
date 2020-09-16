@@ -8,12 +8,12 @@
             </div>
             
               <!-- If user is authenticated, user can download the files-->
+              {% if user.is_authenticated %}
                 <h2><a class="article-title" href="{% url 'notes-detail' object.id %}">{{ object.title }}</a></h2>
                 <h4><strong> Description: </strong></h4>
                 <p class="article-content">{{ object.description }}</p>
                 <p class="article-content"><strong>Branch: </strong>{{ object.branch_choice }}</p>
                 <p class="article-content"><strong>Semester: </strong>{{ object.file_semester }}</p>          
-              {% if user.is_authenticated %}
                 <p><a href="{{ object.file.url }}" download>Download</p>
               {% endif %}
               {% if user.is_authenticated and request.user.username == object.uploader %}
