@@ -1,35 +1,50 @@
 {% extends 'base.html' %}
+{% load static%}
+        <link rel="stylesheet" type="text/css" href="{% static '/notes/style.css' %}">
+{% load widget_tweaks %}
 {% block content %}
   <form method="get">
-    {{ filter.form.as_p }}
-    <button type="submit">Search</button>
+    <form method="get">
+    <div class="well">
+      <h4 style="margin-top: 0">Filter your choices </h4>
+      <div class="row">
+        <div class="form-group col-sm-4 col-md-3">
+          {{ filter.form.as_p }}
+          {% render_field filter.form.uploader class="form-control" %}
+      </div>
+    </div>
+     <button type="submit" class="btn btn-outline-primary" id="search">
+        <span class="glyphicon glyphicon-search"></span> Search
+      </button>
   </form>
-  <ul>
-<table class="table table-bordered">
-    <thead>
-      <tr>
-        <th>Uploader</th>
-        <th>Description</th>
-        <th>Branch</th>
-        <th>Subject</th>
-        <th>Download</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for branch in filter.qs %}
+  </form>
+
+<ul>
+  <table class="table table-bordered">
+      <thead>
         <tr>
-          <td>{{ branch.uploader }}</td>
-          <td>{{ branch.title }}</td>
-          <td>{{ branch.branch_choice }}</td>
-          <td>{{ branch.description }}</td>
-          <td><i style="font-style: normal;"class="fas fa-download"><a href="{{ branch.file.url }}" download></i></td>
+          <th>Uploader</th>
+          <th>Title</th>
+          <th>Branch</th>
+          <th>Download</th>
         </tr>
-      {% empty %}
-        <tr>
-          <td colspan="5">No data</td>
-        </tr>
-      {% endfor %}
-    </tbody>
-  </table>  
+      </thead>
+      <tbody>
+        {% for branch in filter.qs %}
+          <tr>
+            <td>{{ branch.uploader }}</td>
+            <td>{{ branch.title }}</td>
+            <td>{{ branch.branch_choice }}</td>
+            <td><a href="{{ branch.file.url }}" download><button type="button" class="btn btn-outline-secondary fas fa-download"></button></a></td>
+          </tr>
+        {% empty %}
+          <tr>
+            <td colspan="5">No data</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>  
   </ul>
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
 {% endblock %}

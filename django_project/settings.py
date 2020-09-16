@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'django_comments',
     'mptt',
     'comments',
+    # widget-tweaks
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [

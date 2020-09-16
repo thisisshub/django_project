@@ -5,22 +5,52 @@
     {% else %}
         <title> Notes App </title>
     {% endif %}
-    <div class="col-md-4"></div>
-        <h3><strong>About the Developer of this Website.</strong></h3>
+
+    <div class="jumbotron">
+        <h1 class="display-6">About the Developer.</h1>
+        <p class="lead">This minimalist website is made by Shubhashish Dixit who is based in Indore, India.</p>
+        <hr class="my-4">
         <p>This website was made keeping in mind to store subject notes under one space so that students can access it easily later during exam time :)</p>
-        <p>This minimalist website is made by Shubhashish Dixit who is based on Indore, India. </p>
-        <p>He is an open source contributor who can be contacted here,</p>
+    </div>
+    <p class="lead">
+        <a class="btn btn-primary btn-lg" href="" role="button">👋 Wave a hand below</a>
+      </p>
+    <div class="container">
         <ul>
-            <a href="https://github.com/thisisshub"><istyle="font-style: normal;" class="fab fa-github-alt">  Github</i></a>
-        </ul>
-        <ul>
-            <a href="https://twitter.com/thisisshub"><istyle="font-style: normal;" class="fab fa-twitter-square">  Twitter</i></a>
-        </ul>
-        <ul>
-            <a href="https://instagram.com/imnotshub"><istyle="font-style: normal;" class="fab fa-at">  imnotshub</i></a>
-        </ul>
-        <ul>
-            <a href="mailto:en18cs301258@medicaps.ac.in"><istyle="font-style: normal;" class="fab fa-envelope"> Feel Free To Mail Any Bugs or Issues here</i></a>
-        </ul>
-    </div>  
+        <div class="avatar">
+            <img alt="" aria-hidden src="https://cdn.svgporn.com/logos/github-octocat.svg" class="background" />
+            <a href="https://github.com/thisisshub"><img alt="Avatar" src="https://cdn.svgporn.com/logos/github-octocat.svg" width="20" height="20" /></a>
+        </div>
+        
+        {% comment %} <div class="avatar">
+            <img alt="" aria-hidden src="https://cdn.svgporn.com/logos/twitter.svg" class="background" />
+            <a href="https://twitter.com/thisisshub"><img alt="Avatar" src="https://cdn.svgporn.com/logos/twitter.svg" width="20" height="20" /></a>
+        </div> {% endcomment %}
+        
+        <div class="avatar">
+            <img alt="" aria-hidden src="https://cdn.svgporn.com/logos/instagram-icon.svg" class="background" />
+            <a href="https://www.instagram.com/imnotshub/"><img alt="Avatar" src="https://cdn.svgporn.com/logos/instagram-icon.svg" width="20" height="20" /></a>
+        </div>
+        
+        <div class="avatar">
+            <img alt="" aria-hidden src="https://cdn.svgporn.com/logos/google-gmail.svg" class="background" />
+            <a href="mailto:thisisshub@gmail.com"><img alt="Avatar" src="https://cdn.svgporn.com/logos/google-gmail.svg" width="20" height="20" /></a>
+        </div>
+
+        {% comment %} <div class="avatar">
+            <img alt="" aria-hidden src="https://cdn.svgporn.com/logos/medium.svg" class="background" />
+            <a href="https://medium.com/@thisisshub/journey-of-gsoc-2020-e6108ed75d2b?source=activity---post_recommended"><img alt="Avatar" src="https://cdn.svgporn.com/logos/medium.svg" width="20" height="20" /></a>
+        </div> {% endcomment %}
+
+        <div class="avatar">
+            <img alt="" aria-hidden src="https://cdn.svgporn.com/logos/suse.svg" class="background" />
+            <a href="https://build.opensuse.org/project/show/home:thisisshub_:tests"><img alt="Avatar" src="https://cdn.svgporn.com/logos/suse.svg" width="20" height="20" /></a>
+        </div>
+
+        <div class="avatar">
+            <img alt="" aria-hidden src="https://cdn.svgporn.com/logos/linkedin.svg" class="background" />
+            <a href="https://www.linkedin.com/in/shubhashish-dixit-81629a186/"><img alt="Avatar" src="https://cdn.svgporn.com/logos/linkedin.svg" width="20" height="20" /></a>
+        </div>
+        
+    </div>
 {% endblock content %}

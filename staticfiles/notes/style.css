@@ -2,6 +2,8 @@ body {
   font-family: 'Inconsolata';font-size: 22px;
   justify-content: center;
   background: white;
+  margin-top: 3em;
+  padding-top: 3em;
 }
 
 a{
@@ -71,7 +73,7 @@ nav ul li a {
 }
 
 .container{
-  margin-top: 100px;
+  margin-top: 3em;
 }
 
 .footer {
@@ -121,4 +123,12 @@ ul {
   color: white;
 text-decoration: none;
 box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+ul {
+  margin-top: 3em;
+}
+
+#search{
+  margin-bottom: 1em;
 }

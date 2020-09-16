@@ -15,6 +15,13 @@
 	text-decoration: none;
 	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
+a {
+	color: white;
+}
+a:hover {
+    color: white;
+    text-decoration: none;
+}
 
 .card-body {
     -ms-flex: 1 1 auto;
@@ -38,6 +45,7 @@
 	box-shadow: 0 10px 5px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
-.mt-5, .my-5 {
-    margin-top: 7em !important;
+.mb-3, .my-5 {
+	margin-top: 7em !important;
+	margin-bottom: 4em !important;
 }
