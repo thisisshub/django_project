@@ -19,19 +19,20 @@
 
 </head>
 <body>
+    </div>
     <div>
-    <nav id="nav" class="navbar navbar-light" style="background-color: #e3f2fd;">
+    <nav id="nav">
         <ul>
-            <li><a class="navbar-elements" href="{% url 'notes-home' %}">HOME</li>  
-            <li><a class="navbar-elements" href="{% url 'notes-about' %}">ABOUT</li>  
-            <li><a class="navbar-elements" href="{% url 'syllabus' %}" >SYLLABUS</a></li>
+            <li><a class="navbar-elements" href="{% url 'notes-home' %}"><button type="button" class="btn btn-outline-dark">HOME</button></li>  
+            <li><a class="navbar-elements" href="{% url 'notes-about' %}"><button type="button" class="btn btn-outline-dark">ABOUT</button></li>  
+            <li><a class="navbar-elements" href="{% url 'syllabus' %}" ><button type="button" class="btn btn-outline-dark">SYLLABUS</button></a></li>
             {% if user.is_authenticated %}
-                <li><a class="navbar-elements" href="{% url 'profile' %}">PROFILE</a></li>
-                <li><a class="navbar-elements" href="{% url 'notes-filter' %}">FILTER</li>  
-                <li><a class="navbar-elements" href="{% url 'notes-create' %}" >UPLOAD</a></li>
-                <li><a class="navbar-elements" href="{% url 'logout' %}" >LOGOUT</a></li>
+                <li><a class="navbar-elements" href="{% url 'profile' %}"><button type="button" class="btn btn-outline-dark">PROFILE</button></a></li>
+                <li><a class="navbar-elements" href="{% url 'notes-filter' %}"><button type="button" class="btn btn-outline-dark">FILTER</button></li>  
+                <li><a class="navbar-elements" href="{% url 'notes-create' %}" ><button type="button" class="btn btn-outline-primary">UPLOAD</button></a></li>
+                <li><a class="navbar-elements" href="{% url 'logout' %}" ><button type="button" class="btn btn-primary">LOGOUT</button></a></li>
             {% else %}
-                <li><a class="navbar-elements" href="{% url 'login' %}" >LOGIN</a></li>
+                <li><a class="navbar-elements" href="{% url 'login' %}" ><button type="button" class="btn btn-primary">LOGIN</button></a></li>
             {% endif %}
         </ul>
     </nav>
@@ -50,6 +51,5 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
 </body>
 </html>
