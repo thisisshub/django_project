@@ -9,6 +9,7 @@
       {% endfor %}
   {% endif %}
 
+  <div>
   {% for post in posts %}
       <article class="media content-section">
       <img class="rounded-circle article-img" src="{{ post.uploader.profile.image.url }}">
@@ -22,6 +23,7 @@
         </div>
       </article>
   {% endfor %}
+  </div>
 
   <div class="pagination justify-content-center">
     {% if is_paginated %}

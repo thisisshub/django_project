@@ -17,13 +17,16 @@ branch_choices = [
 
 # notes semester choice from 1 to 8
 semester_choice = [tuple([x,x]) for x in range(1,9)]
+
 class Notes_Model(models.Model):
+    """Store notes of different branches and semesters."""
+    
     uploader = models.CharField(max_length=200)
     title = models.CharField(max_length=200)
     date_posted = models.DateTimeField(auto_now_add=True)
     description = models.TextField(max_length=2500)
     branch_choice = models.CharField(max_length=50, choices=branch_choices, default='cse')
-    file_semester = models.IntegerField( choices=semester_choice)
+    file_semester = models.IntegerField(choices=semester_choice)
     file = models.FileField()
     syllabus = models.TextField(max_length=200, default='No Syllabus Availibe Yet')
 
@@ -32,3 +35,17 @@ class Notes_Model(models.Model):
 
     def get_absolute_url(self):
         return reverse("notes-detail", kwargs={"pk": self.pk})
+
+class Syllabus_Model(models.Model):
+    """Store syllabus of branches."""
+
+    title = models.CharField(max_length=400)
+    branch_choice = models.CharField(max_length=50, choices=branch_choices, default='cse')
+    file = models.FileField()
+    file_semester = models.IntegerField(choices=semester_choice, default='1')
+
+    def __str__(self):
+        return self.title
+
+    def get_absolute_url(self):
+        return reverse("syallabus", kwargs={"pk": self.pk})

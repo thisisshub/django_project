@@ -9,35 +9,35 @@
   <form method="get">
     <form method="get">
     <div class="well">
-      <h4 style="margin-top: 0">Filter your choices </h4>
+      <h4 style="margin-top: 0">Find your syllabus </h4>
       <div class="row">
         <div class="form-group col-sm-4 col-md-3">
           {{ filter.form.as_p }}
           {% render_field filter.form.uploader class="form-control" %}
       </div>
     </div>
-     <button type="submit" class="btn btn-outline-primary" id="search">
+
+  </form>
+       <button type="submit" class="btn btn-outline-primary" id="search">
         <span class="glyphicon glyphicon-search"></span> Search
       </button>
   </form>
-  </form>
-
 <ul>
   <table class="table table-bordered">
       <thead>
         <tr>
-          <th>Uploader</th>
-          <th>Title</th>
-          <th>Branch</th>
-          <th>Download</th>
+        <th>Title</th>
+        <th>Branch</th>
+        <th>Semester</th>
+        <th>Download</th>
         </tr>
       </thead>
       <tbody>
         {% for branch in filter.qs %}
           <tr>
-            <td>{{ branch.uploader }}</td>
             <td>{{ branch.title }}</td>
             <td>{{ branch.branch_choice }}</td>
+            <td>{{ branch.file_semester }}</td>
             <td><a href="{{ branch.file.url }}" download><button type="button" class="btn btn-outline-secondary fas fa-download"></button></a></td>
           </tr>
         {% empty %}

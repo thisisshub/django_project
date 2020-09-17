@@ -1,8 +1,9 @@
 from django.urls import path, include
 
-# viewssyllabus
+# views syllabus
 from . import views 
-from .views import (PostListView, 
+from .views import (
+    PostListView, 
     PostDetailView, 
     PostCreateView, 
     PostUpdateView, 
@@ -11,7 +12,7 @@ from .views import (PostListView,
 )
 
 # filters 
-from .filters import NotesFilter
+from .filters import NotesFilter, SyllabusFilter
 from django_filters.views import FilterView
 
 urlpatterns = [
@@ -21,6 +22,6 @@ urlpatterns = [
     path('notes/<int:pk>', PostDetailView.as_view(), name='notes-detail'),
     path('notes/<int:pk>/update/', PostUpdateView.as_view(), name='notes-update'),
     path('notes/<int:pk>/delete/', PostDeleteView.as_view(), name='notes-delete'),
-    path('syllabus/', views.syllabus, name='syllabus'),
+    path('syllabus/', FilterView.as_view(filterset_class=SyllabusFilter), name='syllabus'),
     path('about/', views.about, name='notes-about'),
 ]

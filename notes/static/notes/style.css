@@ -3,7 +3,7 @@ body {
   justify-content: center;
   background: white;
   margin-top: 3em;
-  padding-top: 3em;
+  padding-top: 400px;
 }
 
 a {
@@ -73,7 +73,8 @@ nav ul li a {
 }
 
 .container{
-  margin-top: 3em;
+  position: relative;
+  margin-top: 6em;
 }
 
 .footer {

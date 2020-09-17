@@ -150,5 +150,5 @@ def download(request, path):
         raise Http404
 
 def syllabus(request):
-    return render(request, template_name='syllabus.html')
+    return render(request, template_name='syllabus_model_filter.html')
     
