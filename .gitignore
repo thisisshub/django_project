@@ -6,3 +6,9 @@ local_settings.py
 dp/
 .env
 db.sqlite3
+django_project/__pycache__/
+notes/__pycache__/
+notes/migrations/
+notes/migrations/__pycache__/
+users/__pycache__/
+users/migrations/__pycache__/
